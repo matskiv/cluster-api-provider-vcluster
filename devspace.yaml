@@ -48,12 +48,10 @@ commands:
   dev: |-
     devspace run-pipeline dev -n cluster-api-provider-vcluster-system $@
   deploy: |-
-    devspace run-pipeline --profile deploy -n cluster-api-provider-vcluster-system -d $@
+    devspace run-pipeline deploy --profile deploy -n cluster-api-provider-vcluster-system -d $@
 
 profiles:
   - name: deploy
     patches:
-      - op: remove
-        path: images.provider.rebuildStrategy
       - op: remove
         path: images.provider.target
